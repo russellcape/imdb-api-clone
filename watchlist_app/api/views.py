@@ -173,7 +173,7 @@ class StreamPlatformDetailAV(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class WatchList(generics.ListAPIView):
+class WatchListGV(generics.ListAPIView):
     queryset = WatchList.objects.all()
     serializer_class = WatchListSerializer
     throttle_classes = [ReviewListThrottle, AnonRateThrottle]
