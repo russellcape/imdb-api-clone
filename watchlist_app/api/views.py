@@ -177,12 +177,12 @@ class StreamPlatformDetailAV(APIView):
 class WatchListGV(generics.ListAPIView):
     queryset = WatchList.objects.all()
     serializer_class = WatchListSerializer
-    pagination_class = WatchListCPagination
+    pagination_class = WatchListPagination
+    # pagination_class = WatchListCPagination
     # pagination_class = WatchListLOPagination
-    # pagination_class = WatchListPagination
     # throttle_classes = [ReviewListThrottle, AnonRateThrottle]
-    # filter_backends = [filters.OrderingFilter]
-    # ordering_fields = ['avg_rating']
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = ['avg_rating']
 
 
 class WatchListAV(APIView):
